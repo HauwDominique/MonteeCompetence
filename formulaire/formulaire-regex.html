@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire-regex</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0 20px;
+    }
+    h3  {
+        padding-bottom: 2rem;
+    }
+    form {
+        max-width: 400px;
+    }
+    label {
+        display: block;
+        margin: .5rem 0 2rem;
+    }
+    label p {
+        color: red;
+        margin: 5px 0;
+    }
+    input {
+        border: solid 2px lightgray;
+        border-radius: 4px;
+        margin-top: 10px;
+        padding: 5px;
+        width: 100%;
+    }
+    input.error {
+        border: solid red 2px;
+    }
+    input.valid {
+        border: solid green 2px;
+    }
+    button {
+        background-color: cadetblue;
+        border: solid 1px cadetblue;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+    }
+</style>
+<body>
+
+<h3>Formulaire et regex</h3>
+
+<form class="form-civil">
+    <label for="name">Nom
+        <input id="name" required type="text" data-check="name">
+    </label>
+
+    <label for="age">Age
+        <input id="age" required type="number" data-check="age">
+    </label>
+
+    <label for="email">Email
+        <input id="email" required type="email" data-check="email">
+    </label>
+
+    <label for="phone">Téléphone
+        <input id="phone" type="tel" data-check="phone">
+    </label>
+
+    <button type="submit">Envoyer</button>
+</form>
+
+<div class="resumeErrors">
+    <p>Liste des erreurs</p>
+</div>
+
+<script src="formulaire-regex.js"></script>
+</body>
+</html>
