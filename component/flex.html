@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .wrapper-flex {
+        display: flex;
+    }
+    @media(min-width: 1024px) {
+        .wrapper-flex-item {
+        }
+    }
+
+    .jeanbon {
+        @extend wrapper-flex;
+        .jeanbon-item {
+
+        }
+    }
+
+</style>
+
+<div class="wrapper-flex">
+    <div class="wrapper-flex-item"></div>
+    <div class="wrapper-flex-item"></div>
+    <div class="wrapper-flex-item"></div>
+    <div class="wrapper-flex-item"></div>
+</div>
+
+<div class="jeanbon">
+    <div class="jeanbon-item"></div>
+    <div class="jeanbon-item"></div>
+    <div class="jeanbon-item"></div>
+    <div class="jeanbon-item"></div>
+</div>
+
+</body>
+</html>
