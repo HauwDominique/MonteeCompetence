@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setTImeOut-Arthur</title>
+</head>
+<body>
+    <form action="">
+        <label>
+            Search
+            <input type="search" id="search">
+        </label>
+        <p>
+            text inputs =>
+            <span id="api-call-counter"></span>
+        </p>
+
+        <p>
+            debounced method runs =>
+            <span id="debounce-counter"></span>
+        </p>
+    </form>
+
+    <script src="library.js"></script>
+    <script>
+        const debounceDelay = 800
+        const search = document.getElementById('search')
+
+        /**
+         * method supposed to call api and give data back
+         */
+        const apiCall = () => {
+            logDebouncedMethodCall()
+        }
+
+        /**
+         * method to log input text event in a counter
+         */
+        const logTextInputs = () => {
+            const apiCallCounter = document.getElementById('api-call-counter')
+            let apiCallCount = apiCallCounter.innerHTML || 0
+            apiCallCount = parseInt(apiCallCount) + 1
+
+            // Updates the number of times apiCall method is called
+            apiCallCounter.innerHTML = apiCallCount
+        }
+
+        /**
+         * method to log debounced method call in a counter (here it's supposed to be our api call method)
+         */
+        const logDebouncedMethodCall = () => {
+            const debounceCounter = document.getElementById('debounce-counter')
+            const debounceCount = debounceCounter.innerHTML || 0
+
+            debounceCounter.innerHTML = parseInt(debounceCount) + 1
+        }
+
+        search.addEventListener('input', () => {
+            logTextInputs()
+
+            // debounce apiCall method
+            debounce(apiCall, debounceDelay)
+        })
+    </script>
+</body>
+</html>

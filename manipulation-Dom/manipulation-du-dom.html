@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
+</head>
+<body>
+    <section>
+        <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the
+            <a href="https://www.mozilla.org/">Mozilla homepage</a>
+        </p>
+    </section>
+
+    <script>
+        const link = document.querySelector('a');
+        const sect = document.querySelector('section');
+
+        link.textContent = 'Injection de texte dans un élément Html with "textContent"';
+        link.href = 'https://developer.mozilla.org';
+
+        const para = document.createElement('p');
+        para.textContent = 'Injection de texte';
+        sect.appendChild(para);
+        para.classList.add('para-2');
+
+        const linkPara = document.querySelector('p');
+        const suiteTxt = document.createTextNode(' text ajouté à la suite');
+        linkPara.appendChild(suiteTxt);
+        linkPara.classList.add('para-1');
+
+    //    création d'une div dans  la section
+        const divElt = document.createElement('div');
+        divElt.textContent = 'Ceci est le texte injecté dans la div';
+        sect.appendChild(divElt);
+
+        // déplace l'élémnet html p dans la div
+        const divLink = document.querySelector('div');
+        // divLink.appendChild(linkPara)
+
+
+
+
+
+    </script>
+</body>
+</html>

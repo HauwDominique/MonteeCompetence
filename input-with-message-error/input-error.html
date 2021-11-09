@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        input.error{
+            border: solid red 2px;
+        }
+        div.error {
+            color: red;
+        }
+        label {
+            display: block;
+            margin: 1rem 0 0;
+        }
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Input with error</h2>
+
+    <label for="">
+        <input type="text" class="error">
+        <div class="error">Error</div>
+    </label>
+
+    <label for="">
+        <input type="text">
+    </label>
+
+    <label for="">
+        <input type="text" class="error">
+        <div class="error">Error</div>
+    </label>
+
+    <label for="">
+        <input type="text" class="error">
+        <div class="error">Error</div>
+    </label>
+
+
+<script>
+
+    // Créer un écouteur d'événement qui supprimera la classe ‘error’ et masquera l’erreur à la saisie dans un champ input.
+
+    const inputs = document.querySelectorAll('input');
+
+    for(const input of inputs) {
+        input.addEventListener('input', () => {
+            input.classList.remove('error')
+            const inputError = input.parentNode.querySelector('div.error')
+
+            if(inputError) {
+                inputError.style.display = 'none'
+            }
+
+        });
+    }
+
+</script>
+
+</body>
+</html>

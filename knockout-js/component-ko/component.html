@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component ko-js</title>
+    <link rel="stylesheet" href="../knockout.css">
+    <style>
+        body {
+            display: flex;
+        }
+        .container {
+            margin-right: 50px;
+            padding-right: 20px;
+            border-right: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ko component: "my-form-list" --><!-- /ko -->
+    </div>
+    <div class="container">
+        <my-form-list></my-form-list>
+    </div>
+
+    <script src='//ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js' type='text/javascript'></script>
+    <script src="appViewModel.js"></script>
+    <script src="component.js"></script>
+</body>
+</html>

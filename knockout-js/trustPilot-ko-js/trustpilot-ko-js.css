@@ -1,0 +1,48 @@
+input {
+    width: 30px;
+    height: 20px;
+    margin: 0 20px;
+    text-align: center;
+}
+.InputAvisTp {
+    width: 150px;
+    height: 50px;
+    text-align: left;
+}
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 700px;
+    border-bottom: solid 2px lightgrey;
+}
+li:first-child {
+    border-top: solid 2px lightgrey;
+}
+.noteTp {
+    width : 70px;
+}
+.stars {
+    width : 250px;
+}
+.avisTp {
+    width : 300px;
+}
+.stars {
+    display: flex;
+}
+.stars div {
+    background: #eee;
+    height: 2rem;
+    margin: .5rem;
+    width: 2rem;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.stars span {
+    display: block;
+    background: orange;
+    height: 100%;
+    width: 0;
+}

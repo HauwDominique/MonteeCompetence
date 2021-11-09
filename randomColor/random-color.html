@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random color</title>
+
+    <style>
+        :root {
+            --background-color: #FFF;
+            /*--bkg-rgb: rgb(100, 100, 100);*/
+            --bkg-hexa: #60e89a;
+
+        }
+        div {
+            width: 200px;
+            height: 40px;
+        }
+        .rgb {
+            /*background-color: var(--bkg-rgb);*/
+        }
+        .hexa {
+            background-color: var(--bkg-hexa);
+        }
+    </style>
+</head>
+<body>
+
+
+
+<h3>GeneratorColor-RGB</h3>
+<div class="rgb"></div>
+
+<h3>GeneratorColor-Hexadecimal</h3>
+<div class="hexa"></div>
+
+</body>
+<!--<script>-->
+
+    <!--const rgbElement = document.querySelector('.rgb')-->
+    <!--const hexaElement = document.querySelector('.hexa')-->
+    <!--// console.log(hexaElement)-->
+
+    <!--function getRandomRgb () {-->
+        <!--let result = '';-->
+        <!--let min = Math.ceil(0);-->
+        <!--let max = Math.floor(256);-->
+
+        <!--for(let i=0; i < 3; i++) {-->
+            <!--let rgb = (Math.floor(Math.random() * (max - min)) + min)-->
+            <!--result += rgb + ','-->
+        <!--}-->
+        <!--result = result.slice(0, -1)-->
+        <!--rgbElement.style.backgroundColor = 'rgb(' + result + ')' /* setter une propriété à un style */-->
+    <!--}-->
+
+    <!--getRandomRgb()-->
+
+    <!--const random_hex_color_code = () => {-->
+        <!--let n = (Math.random() * 0xfffff * 1000000).toString(16);-->
+        <!--return '#' + n.slice(0, 6);-->
+    <!--};-->
+
+    <!--function getRandomHex () {-->
+        <!--let hexacolor = random_hex_color_code()-->
+        <!--console.log('hexacolor :' + hexacolor)-->
+        <!--hexaElement.style.setProperty('&#45;&#45;bkg-hexa', hexacolor)-->
+    <!--}-->
+
+    <!--getRandomHex()-->
+
+//    SOLUCE ARTHUR
+<script>
+    const rgbElement = document.querySelector('.rgb')
+    const getRandomChannelValue = () => Math.floor(Math.random() * 256)
+    const getRandomAlphaValue = () => Math.random()
+
+    const getRandomRGBColor = () => `rgb(
+            ${getRandomChannelValue()},
+            ${getRandomChannelValue()},
+            ${getRandomChannelValue()}
+        )`
+    const getRandomRGBAColor = () => `rgba(
+            ${getRandomChannelValue()},
+            ${getRandomChannelValue()},
+            ${getRandomChannelValue()},
+            ${getRandomAlphaValue()}
+        )`
+    rgbElement.style.backgroundColor = getRandomRGBAColor()
+</script>
+
+<!--SOLUCE ARTHUR-->
+<script>
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+    document.querySelector('html').style.backgroundColor = getRandomColor()
+</script>
+
+<!--AUTRE SOLUCE-->
+<script>
+    const hexaElement = document.querySelector('.hexa')
+    const getRandomHexColor = () => {
+        return '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6)
+    }
+    hexaElement.style.backgroundColor = getRandomHexColor()
+</script>
+
+
+</script>
+</html>

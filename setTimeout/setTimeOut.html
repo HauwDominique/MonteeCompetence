@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SetTimeOut</title>
+</head>
+<body>
+
+    <input type="text" class="inputVal" id="search"/>
+
+
+    <!--Appel du script contenant la fonction debounce (fonction globale pouvant être utilisée depuis tout le site)-->
+    <!--<script src="library.js"></script>-->
+
+    <script>
+        const inputElt = document.querySelector('.inputVal');
+
+        const apiCall = () => {
+            console.log('timeoutValue : ' + inputElt.value);
+        };
+
+        let timeout = null;
+
+
+        const debounce  = function (func, delay){
+            // console.log('timeout before clear' + timeout)
+
+            clearTimeout(timeout);
+            console.log( clearTimeout(timeout));
+            timeout = setTimeout(func, delay);
+
+        };
+
+        inputElt.addEventListener("keyup", function() {
+           // le debounce est un anti rebond. Cela permet de lancer la méthode (apicall())
+            // uniquement lorsque le délai passé en arg2(ici 1000) est atteint sans que l'évènement ne soit relancé
+           debounce(apiCall, 1000);
+        });
+
+    </script>
+
+
+    <!--<script>-->
+        <!--const debounceDelay = 800-->
+        <!--const search = document.getElementById('search')-->
+
+        <!--/**-->
+         <!--* method to debounce an other method depending a delay param-->
+         <!--* @param method-->
+         <!--* @param delay-->
+         <!--*/-->
+        <!--let debounceTimeout = null-->
+        <!--const debounce = (method, delay) => {-->
+            <!--// cancel setTimeout execution-->
+            <!--clearTimeout(debounceTimeout)-->
+            <!--// run method after delay-->
+            <!--debounceTimeout = setTimeout(method, delay)-->
+        <!--}-->
+
+        <!--/**-->
+         <!--* method supposed to call api and give data back-->
+         <!--*/-->
+        <!--const apiCall = () => {-->
+            <!--console.log(123)-->
+        <!--}-->
+
+        <!--search.addEventListener('input', function(){-->
+            <!--debounce(apiCall, debounceDelay)-->
+        <!--})-->
+    <!--</script>-->
+
+</body>
+</html>

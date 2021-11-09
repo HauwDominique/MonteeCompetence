@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScrollTo</title>
+
+    <style>
+        /*html {*/
+            /*scroll-behavior: smooth; !* génère une animation sur le scroll*!*/
+        /*}*/
+        body {
+            margin: 0;
+        }
+        section {
+            min-height: 400px;
+            padding: 1rem;
+        }
+        section:nth-child(odd) {
+            background-color: lightgray;
+        }
+        a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h3>Scroll To</h3>
+
+<a href="#">scroll to NOTHING</a>
+<a href="#two">scroll to two</a>
+<a href="#three">scroll to three</a>
+<a href="#four">scroll to four</a>
+<a href="#">scroll to NOTHING</a>
+
+<section>
+    <p>ONE Lorem ipsum dolor.</p>
+</section>
+<section id="two">
+    <p>TWO Nobis, obcaecati voluptates?</p>
+</section>
+<section id="three">
+    <p>THREE Aliquid, odio, tenetur.</p>
+</section>
+<section id="four">
+    <p>FOUR Libero vero, voluptatem?</p>
+</section>
+<section>
+    <p>Dicta dolorum, minima.</p>
+</section>
+<section>
+    <p>Ducimus, molestiae quibusdam?</p>
+</section>
+
+<script src="scrollTo.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrustPilot</title>
+
+    <style>
+        :root {
+            --width: 0;
+        }
+        .star {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            margin-right: 5px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color: lightgray;
+        }
+        .star::before {
+            content:'';
+            position: absolute;
+            background-color: orange;
+            width: var(--width);
+            height: 80px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trustPilot-contain">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <script>
+        let note = 2.4;
+        const stars = document.querySelectorAll('.star');
+
+        for(let i = 0; i < stars.length ; i++) {
+            if (note >= 1) {
+                stars[i].style.setProperty('--width', '100%')
+                note--
+            } else if ( 0 > note < 1) {
+                let decim = Math.round(note * 100)
+                // console.log(decim)
+                stars[i].style.setProperty('--width', decim + '%')
+                note--
+            }
+        }
+
+
+        //SOLUCE ARTHUR
+
+
+        // for(let i=1; i<5; i++) {
+        //     console.log('stars : ' + stars[i])
+        //     var styleElem = stars[i].appendChild(document.createElement("style"))
+        //     // styleElem.innerHTML = '.star:before {width: 15px;}'
+        //
+        //     if(note >= 1) {
+        //         //injecter before-width à 100%
+        //         styleElem.innerHTML = '.star:before {width: 100%;}'
+        //         note --
+        //     } else if(note > 0 && note < 1) {
+        //         let decim = Math.round(note * 100)
+        //         console.log('decim : ' + decim)
+        //         styleElem.innerHTML = '.star:before {width: ' + decim +'%;}'
+        //     }
+        // }
+
+    </script>
+</body>
+</html>
+

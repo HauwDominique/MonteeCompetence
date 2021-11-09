@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stars Arthur</title>
+    <style>
+        .stars {
+            display: flex;
+        }
+        .stars div {
+            background: #eee;
+            height: 2rem;
+            margin: .5rem;
+            width: 2rem;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        .stars span {
+            display: block;
+            background: orange;
+            height: 100%;
+            width: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>TrustPilot Arthur</h3>
+<div class="stars" data-note="4.5" data-max="5"></div>
+<div class="stars" data-note="3.72" data-max="5"></div>
+<div class="stars" data-note="2" data-max="5"></div>
+
+<script>
+    const stars = document.querySelectorAll('.stars')
+
+    console.log(stars)
+    for(const starElt of stars) {
+
+        const note = starElt.getAttribute('data-note') ? starElt.getAttribute('data-note') : 0
+        const maxNote = starElt.getAttribute('data-max') ? starElt.getAttribute('data-max') : 5
+        const integer = Math.floor(note)
+        const decimals = note - integer
+
+        for (let n = 0; n < maxNote; n++) {
+            const div = document.createElement('div')
+            const span = document.createElement('span')
+            starElt.appendChild(div).appendChild(span)
+        }
+
+        const elements = starElt.querySelectorAll('div')
+        Array.prototype.forEach.call(elements, function (e, i) {
+            const star = elements[i].querySelector('span')
+            if (i < note) {
+                star.style.width = '100%'
+            }
+            if (i == integer) {
+                star.style.width = decimals * 100 + '%'
+            }
+        })
+    }
+</script>
+</body>
+</html>

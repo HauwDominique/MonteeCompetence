@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrustPilot with ko js</title>
+    <link rel="stylesheet" href="trustpilot-ko-js.css">
+</head>
+<body>
+
+<h3>TrustPilot with ko js</h3>
+<form data-bind="submit: addNoteTrustPilot">
+    <label>Note TrustPilot</label>
+    <input data-bind="value: noteTrustPilot">
+    <label>Commentaire</label>
+    <input type="text" data-bind="value: avisTrustPilot" class="InputAvisTp">
+    <button type="submit">Envoyer</button>
+</form>
+
+<ul data-bind="foreach: listNoteTP">
+    <li>
+        <div class="noteTp" data-bind="text: 'Note : ' + $data.note + '/5'"></div>
+        <div class="stars"></div>
+        <div class="avisTp" data-bind="text: 'Avis client :' + $data.avis"></div>
+    </li>
+</ul>
+
+<script src='//ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js' type='text/javascript'></script>
+<script src="trustPilot-ko.js"></script>
+
+</body>
+</html>

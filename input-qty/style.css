@@ -1,0 +1,19 @@
+.input-qty-contain {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.input-qty {
+    text-align: center;
+    width: 60px;
+
+}
+.btn__qty {
+    background-color: cornflowerblue;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    width: 15px;
+}

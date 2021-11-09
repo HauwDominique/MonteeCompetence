@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boucle-js</title>
+
+</head>
+<body>
+<form name="selectForm">
+    <p>
+        <label for="typesMusique">Veuillez choisir des genres musicaux, puis cliquez :</label>
+        <select id="typesMusique" multiple="multiple" name="typesMusique">
+            <option selected="selected">R&B</option>
+            <option>Jazz</option>
+            <option>Blues</option>
+            <option>New Age</option>
+            <option>Classique</option>
+            <option>Opera</option>
+        </select>
+    </p>
+    <p>
+        <button id="btn" type="button">Combien sont sélectionnés ?</button>
+    </p>
+</form>
+
+<div class="contain">
+    <h2 class="title">Les boucles</h2>
+    <div class="span-contain">
+        <span class="item">5</span>
+        <span class="item">5</span>
+        <span class="item">5</span>
+        <span class="item">5</span>
+    </div>
+    <button>Lancez la boucle</button>
+</div>
+
+
+</body>
+
+<script>
+    function qty(selectObject) {
+        let qtySelected = 0;
+        for (let i = 0; i < selectObject.options.length; i++) {
+            if (selectObject.options[i].selected) {
+                qtySelected++;
+            }
+        }
+        return qtySelected;
+    }
+
+    function countFive() {
+        let count = 0;
+        for (let i = 0; i < 5; i++) {
+            count++;
+            console.log(count);
+        }
+        return count;
+    }
+
+    let btn = document.getElementById('btn');
+
+    btn.addEventListener("click", function () {
+        alert("Nbre options choisies : " + qty(document.selectForm.typesMusique));
+        return console.log('count = ' + countFive());
+    });
+
+</script>
+</html>

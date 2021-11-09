@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="input-quantity">
+    <div class="btn__qty btn__qty-less">-</div>
+    <input type="number" class="input-qty" placeholder="0"/>
+    <div class="btn__qty btn__qty-more">+</div>
+</div>
+<div class="input-quantity">
+    <div class="btn__qty btn__qty-less">-</div>
+    <input type="number" class="input-qty" placeholder="0"/>
+    <div class="btn__qty btn__qty-more">+</div>
+</div>
+<div class="input-quantity">
+    <div class="btn__qty btn__qty-less">-</div>
+    <input type="number" class="input-qty" placeholder="0"/>
+    <div class="btn__qty btn__qty-more">+</div>
+</div>
+<script>
+    const qtyInputs = document.querySelectorAll('.input-quantity')
+    for(input of qtyInputs) {
+        console.log(input)
+    }
+</script>
+</body>
+</html>

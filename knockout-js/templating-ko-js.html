@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Templating with ko js</title>
+    <link rel="stylesheet" href="knockout.css">
+</head>
+<body>
+
+
+<div>
+    <h2>Appel du templating d'id="form-tmpl"</h2>
+    <div id="form-item" data-bind="template: {name: 'form-tmpl'}"></div>
+</div>
+
+<!-- ko if : names().length > 0 -->
+<div>
+    <h2>Appel du templating d'id="list-tmpl"</h2>
+    <div id="list-item" data-bind="template: {name: 'list-tmpl'}"></div>
+</div>
+<!-- /ko -->
+
+<!-- ko if : names().length < 1 -->
+<p>Il n'y a aucun inscrit.</p>
+<!-- /ko -->
+
+<!-- ko if : names().length > 0 -->
+    <div>
+        <h2>Appel du templating d'id="inscrit-tmpl"></h2>
+        <div data-bind="template: {name: 'inscrit-tmpl'}"></div>
+    </div>
+<!-- /ko -->
+
+<script id="form-tmpl" type="text/html">
+    <form data-bind="submit: capitalizeNames">
+        <p><label>Prénom : <input data-bind="value: firstName"/></label></p>
+        <p><label>Nom: <input data-bind="value: lastName"/></label></p>
+        <p>Nom complet: <strong data-bind="text: fullName"></strong></p>
+        <button type="submit">Inscrire</button>
+    </form>
+</script>
+
+<script id="list-tmpl" type="text/html">
+    <div class="array-contain">
+        <table>
+            <thead><tr>
+                <th>Id</th><th>Nom et prénom</th><th>Action</th>
+            </tr></thead>
+
+            <tbody data-bind="foreach: objectNamesTable">
+            <tr>
+                <td data-bind="text: ($index() + 1)"></td>
+                <td data-bind="text: $data.nom + ' ' + $data.prenom"></td>
+                <td><a href="#" data-bind="click: $parent.removeName">Supprimer</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<script id="inscrit-tmpl" type="text/html">
+    <p>Nombre d'inscrits : <span data-bind="text: names().length"></span></p>
+</script>
+
+<script src='//ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js' type='text/javascript'></script>
+<script src="knockout.js"></script>
+</body>
+</html>
