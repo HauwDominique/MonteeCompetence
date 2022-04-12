@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 80px 0 0;
+}
+
+header {
+    align-items: center;
+    background-color: lightgrey;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    opacity: 1;
+    padding: 1rem;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    transform: translateY(0);
+    transition: all 1s;
+    width: 100%;
+}
+
+header.disabled {
+    opacity: 0;
+    transform: translateY(-100%);
+}
