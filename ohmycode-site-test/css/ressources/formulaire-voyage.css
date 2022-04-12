@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 75%; /* 1rem = 10px */
+}
+
+#voyages {
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 1.4rem;
+}
+#voyages .container {
+    background-size: cover;
+    background-image:url("../../assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+#voyages .container-title {
+    font-size: 6rem;
+}
+
+#voyages #form {
+    display: flex;
+    align-items: center;
+
+}
+#voyages .field {
+    border: none;
+}
+
+#voyages select,
+#voyages input {
+    background-color: white;
+    border: none;
+    font-size: 2.5em;
+    height: 2.5em;
+    margin: 1.5em;
+    padding: 0 2em;
+    width: 16em;
+}
+#voyages button {
+    background-color: orange;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 3.5em;
+    padding: 0.4em 0.35em
+}
+#voyages .list-results {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#voyages .item {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 4px;
+    color: black;
+    flex: 1;
+    font-size: 2.2em;
+    margin: 2rem;
+    padding: 2rem;
+}
+#voyages .item-country {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#voyages p {
+    margin-bottom: .5rem;
+}
+#voyages .error {
+    color: black;
+    font-size: 2rem;
+}

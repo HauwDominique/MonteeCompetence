@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>CustomSelect with jquery</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <my-header></my-header>
+
+    <div class="container">
+        <h1 class="title">Custom Select</h1>
+
+        <div class="custom-selects">
+            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+            <div class="custom-select">
+                <p class="custom-select-descript">Ce custom-select est fait avec du jquery.</p>
+                <select>
+                    <option value="0">Select car:</option>
+                    <option value="1">Audi</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Citroen</option>
+                    <option value="4">Ford</option>
+                    <option value="5">Honda</option>
+                    <option value="6">Jaguar</option>
+                    <option value="7">Land Rover</option>
+                    <option value="8">Mercedes</option>
+                    <option value="9">Mini</option>
+                    <option value="10">Nissan</option>
+                    <option value="11">Toyota</option>
+                    <option value="12">Volvo</option>
+                </select>
+            </div>
+
+            <div class="select-base-wrapper">
+                <div class="select-base">
+                    <div class="select-title">
+                        <p class="title">Select Html de base</p>
+                        <p class="description">Ce select doit être masqué en css, mais c'est lui qui passe les informations. Il est relié en js aux select-custom.</p>
+                    </div>
+                    <select id="country">
+                        <option value="Amsterdam" selected class="selected">Amsterdam</option>
+                        <option value="Barcelone">Barcelone</option>
+                        <option value="Berlin">Berlin</option>
+                        <option value="Paris">Paris</option>
+                    </select>
+                </div>
+
+                <div class="select-contain">
+                    <div class="select-wrapper">
+                        <div class="select-title">
+                            <p class="title">Custom Select avec du JS</p>
+                            <div class="description">
+                                <p class="subtitle">Avec une boucle pour récupérer et afficher les options du select de base.</p>
+                                <p>Le fait de récupérer les options du select de base en JS nous oblige dans le js à attendre que le DOM soit complètement chargé.</p>
+                            </div>
+                        </div>
+
+                        <div class="custom-select" id="custom-country">
+                            <div id="custom-country-label">Amsterdam</div>
+                            <ul class="select-item-js-hide">
+                                <!--ici mettre une boucle pour récupérer les éléments du select et les afficher-->
+                                <!--<li>Amsterdam</li>-->
+                                <!--<li>Barcelone</li>-->
+                                <!--<li>Berlin</li>-->
+                                <!--<li>Paris</li>-->
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!--<div class="custom-load">-->
+                    <!--<ul id="custom-load-label"></ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script
+            crossorigin="anonymous"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+    <script type="module" src="js/header.js"></script>
+    <script src="js/custom-select.js"></script>
+    <script src="js/select-custom-with-jquery.js"></script>
+
+</body>

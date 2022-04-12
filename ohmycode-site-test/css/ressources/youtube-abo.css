@@ -1,0 +1,39 @@
+:root {
+    --happy-color:  #E1AF12;
+}
+
+.youtube-contain {
+    width: 80vw;
+    height: 50%;
+    padding: 5px 5px 0;
+    position: relative;
+}
+.btn-contain {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3em;
+}
+.youtube-btn {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 0 0 3px 3px;
+    color: black;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 2px 5px;
+}
+.happy {
+    color: var(--happy-color);
+}
+.abonne {
+    background-color: var(--happy-color);
+}
+
+@media screen and(max-width: 800px) {
+    .youtube-contain {
+        width: 100vw;
+        height: 50%;
+        position: relative;
+    }
+}

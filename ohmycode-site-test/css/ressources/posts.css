@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #1B1C1E;
+}
+
+.posts {
+    background: #C6CAD3;
+    padding: 2rem;
+    width: 80%;
+}
+.post {
+    padding-bottom: 2rem;
+}
+.post-title {
+    color: #EC7416;
+    font-size: 4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.post-extract {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+.post-seo {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        height: auto;
+    }
+}
