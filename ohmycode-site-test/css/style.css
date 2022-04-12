@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "ressources/homepage.css";
+@import "ressources/artist-finder.css";
+@import "ressources/faq.css";
+@import "ressources/fiche-produit.css";
+@import "ressources/formulaire.css";
+@import "ressources/posts.css";
+@import "ressources/toast.css";
+@import "ressources/todoList.css";
+@import "ressources/youtube-abo.css";
+@import "ressources/formulaire-voyage.css";
+@import "ressources/select-custom-with-jq.css";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --primary-color: #232C2D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+}
+html {
+    font-family: 'QuickSand', arial;
+    font-size: 31.25%; /* 1rem = 10px */
+}
+body {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 1.4rem;
+}
+
+.container {
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    font-weight: bold;
+    height: 100vh;
+    justify-content: center;
+}
+
+.title {
+    font-size: 4rem;
+    padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        /*height: auto;*/
+    }
+}

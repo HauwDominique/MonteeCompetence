@@ -1,0 +1,122 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');*/
+
+/*:root {*/
+    /*--primary-color: #232C2D;*/
+/*}*/
+
+/** {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*box-sizing : border-box;*/
+/*}*/
+/*html {*/
+    /*font-family: 'QuickSand', arial;*/
+    /*font-size: 31.25%; !* 1rem = 10px *!*/
+/*}*/
+
+/*body {*/
+    /*background: var(--primary-color);*/
+    /*color: #FFFFFF;*/
+    /*font-size: 1.4rem;*/
+/*}*/
+
+/*.container {*/
+    /*align-items: center;*/
+
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*font-family: arial;*/
+    /*font-weight: bold;*/
+    /*height: 100vh;*/
+    /*justify-content: center;*/
+/*}*/
+.navbar-desktop a,
+.navbar-mobile a {
+    color: var(--primary-color) ;
+    text-decoration: none;
+}
+
+/*Menu mobile*/
+.navbar-mobile {
+    display: none;
+}
+.navbar-mobile i {
+    color: #FFFFFF;
+    font-size: 6rem;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    z-index: 100;
+}
+.navbar-mobile .fa-times {
+    font-size: 6rem;
+    top: 2rem;
+}
+.modal {
+    background: #21DCCE;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: -100vh;
+    transition: top 0.9s;
+    width: 100%;
+    z-index: 10;
+}
+.modal-change {
+    top: 0;
+}
+.navbar-mobile-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.navbar-mobile-list a {
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 5rem 2rem;
+}
+
+/*Menu destkop*/
+.navbar-desktop {
+    background-color: #A0A5A5;
+    font-size: 3rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+}
+
+.navbar-desktop a {
+    /*font-size: 4rem;*/
+    padding: 1rem 3rem;
+}
+.navbar-desktop a:hover {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/*.title {*/
+    /*font-size: 4rem;*/
+    /*padding-bottom: 2rem;*/
+/*}*/
+
+.hp-description {
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-bottom: 8rem;
+}
+.exo {
+    font-size: 3rem;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 1024px) {
+    .navbar-mobile {
+        display: block;
+    }
+    .navbar-desktop {
+        display: none;
+    }
+}

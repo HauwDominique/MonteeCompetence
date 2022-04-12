@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto:wght@300;400;500&display=swap');
+
+#todo-list {
+    background: #E1E4EC;
+    border-radius: 4px;
+    color: #000;
+    padding: 4rem;
+    width: 70%;
+}
+#todo-list #form {
+    display: flex;
+    flex-direction: row;
+}
+#todo-list input {
+    border: solid 1px #8A8B90;
+    border-radius: 4px 0 0 4px;
+    border-width: 0 0 1px 0;
+    color: #000000;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+#error {
+    color: red;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+}
+
+#addBtn {
+    border-radius : 0 4px 4px 0;
+    background-color: #C9CFD0;
+    border: none;
+    cursor: pointer;
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.item {
+    background-color: #C9CFD0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+.item.done {
+    background: #F3F384;
+    text-decoration: line-through;
+}
+.item p {
+    font-size: 3rem;
+    padding-left: 1rem;
+    width: 100%;
+}
+.item button {
+    border-radius: 4px;
+    height: 5rem;
+    width: 7rem;
+    margin-left: 1.5rem;
+}
+.btn-delete {
+    background-color: red;
+    color: #FFFFFF;
+}
+.btn-archive {
+    background: #3FE851;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 800px){
+    html {
+        font-size: 40%;
+    }
+    #todo-list {
+        width: 95%;
+    }
+}
