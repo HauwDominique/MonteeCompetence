@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendez-vous</title>
+    <link rel="stylesheet" href="rendez-vous.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prenez rendez-vous !</h1>
+        <form action="">
+            <div class="field">
+                <label for="start-appointement">Début du rendez-vous :</label>
+                <input type="time" id="start-appointement" class="inputElt">
+                <div class="msg-error"></div>
+            </div>
+            <div class="field">
+                <label for="during-appointement">Durée du rendez-vous (en minute)</label>
+                <input type="number" id="during-appointement"  class="inputElt" min="1">
+                <div class="msg-error"></div>
+            </div>
+            <div class="field">
+                <label for="end-day">A quelle heure se finit votre journée ?</label>
+                <input type="time" id="end-day" class="inputElt">
+                <div class="msg-error"></div>
+            </div>
+            <button type="submit" id="confirm">Valider</button>
+        </form>
+        <div class="response"></div>
+        <button id="new-appointement">Prendre un nouveau rendez-vous</button>
+        <div class="list-appointements">
+            <p>Voici vos rendez-vous de la journée :</p>
+        </div>
+    </div>
+
+    <script src="rendez-vous.js"></script>
+</body>
+</html>
